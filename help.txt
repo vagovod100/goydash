@@ -1,0 +1,8 @@
+Available built-in commands:
+  - cd [DIR]        Change directory
+  - pwd             Print working directory
+  - export VAR=VAL  Set environment variable
+  - unset VAR       Unset environment variable
+  - echo TEXT       Print text
+  - help            Show this message
+  - exit            Exit the shell
