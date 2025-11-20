@@ -1,4 +1,5 @@
 #include "builtins.h"
+#include <fcntl.h>
 
 static BuiltinEntry builtins[CMD_COUNT] = {
 	{"cd",      CMD_CD},
@@ -112,8 +113,20 @@ void cmd_echo(char** args){
     write(STDOUT_FILENO, "\n", 1);
 }
 
-void cmd_help(){
+static int open_help_file(){
     int fd = open("help.txt", O_RDONLY);
+    if (fd != -1)
+        return fd;
+
+    fd = open(GOYDASH_DATADIR "/help.txt", O_RDONLY);
+    if (fd != -1)
+        return fd;
+
+    return -1;
+}
+
+void cmd_help(){
+    int fd = open_help_file();
     if (fd == -1) {
         print_error("help open error");
         return;
