@@ -1,3 +1,6 @@
+#ifndef BUILTINS_H
+#define BUILTINS_H
+
 #include "utils.h"
 
 #include <stdbool.h>
@@ -44,3 +47,5 @@ void cmd_echo(char** args);
 
 // команда help
 void cmd_help();
+
+#endif

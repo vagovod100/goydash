@@ -1,4 +1,5 @@
-#pragma once
+#ifndef PARSER_H
+#define PARSER_H
 
 #include <string.h>
 #include <stdint.h>
@@ -9,3 +10,5 @@
 
 // парсит строку command и записывает аргументы в args
 void parse_args(char* command, ssize_t command_size, char** args);
+
+#endif
