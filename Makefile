@@ -9,7 +9,7 @@ PREFIX ?= /usr
 DATADIR = $(PREFIX)/share/$(BINARY)
 
 SRC = \
-	main.c \
+	src/main.c \
 	src/parser.c \
 	src/executor.c \
 	src/utils.c \
