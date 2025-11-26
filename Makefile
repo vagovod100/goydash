@@ -1,7 +1,8 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -g -Iinclude
 
-BUILD_DIR = build
+BUILD_ROOT = build
+BUILD_DIR = $(BUILD_ROOT)/target
 BINARY = goydash
 TARGET = $(BUILD_DIR)/$(BINARY)
 
@@ -31,4 +32,4 @@ install: $(TARGET)
 	install -m644 "help.txt" "$(DESTDIR)$(DATADIR)/help.txt"
 
 clean:
-	rm -rf $(BUILD_DIR)
+	rm -rf $(BUILD_ROOT)
